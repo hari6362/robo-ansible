@@ -18,7 +18,7 @@
   
   - name: print output
     debug:
-      msg: "{{ ec2_output }}"
+      msg: "{{ ec2_output }}"   #take the output reference to create r53
 
 
 
