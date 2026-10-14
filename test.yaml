@@ -13,5 +13,5 @@
   tasks:
     - name: Print EC2 configuration
       ansible.builtin.debug:
-      msg: "{{ item.name }} uses {{ item.type }}"
+        msg: "{{ item.name }} uses {{ item.type }}"
       loop: "{{ instances }}"
