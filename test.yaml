@@ -9,6 +9,8 @@
         type: t3.small
       - name: frontend
         type: t3.micro
+      - name: harish
+        type: t3.medium  
 
   tasks:
     - name: Print EC2 configuration
