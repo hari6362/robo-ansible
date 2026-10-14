@@ -1,6 +1,6 @@
 - name: list of distionaries
   hosts: local
-  
+  connection: local
   vars:
     instances:
       - name: mongodb
@@ -12,6 +12,6 @@
 
   tasks:
     - name: Print EC2 configuration
-      ansible.builtin.debug:
+      debug:
         msg: "{{ item.name }} uses {{ item.type }}"
       loop: "{{ instances }}"
