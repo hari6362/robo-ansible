@@ -1,6 +1,6 @@
 - name: list of distionaries
   hosts: local
-  connections: local
+  
   vars:
     instances:
       - name: mongodb
