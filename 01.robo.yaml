@@ -1,4 +1,4 @@
-- name: roboshop instances management
+- name: roboshop ins management
   hosts: local
   connection: local
   vars:
