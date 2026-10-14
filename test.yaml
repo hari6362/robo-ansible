@@ -1,18 +1,17 @@
 - name: list of distionaries
   hosts: local
   connections: local
+  vars:
+    instances:
+      - name: mongodb
+        type: t3.micro
+      - name: redis
+        type: t3.small
+      - name: frontend
+        type: t3.micro
 
-    vars:
-      instances:
-        - name: mongodb
-          type: t3.micro
-        - name: redis
-          type: t3.small
-        - name: frontend
-          type: t3.micro
-
-    tasks:
-      - name: Print EC2 configuration
-        ansible.builtin.debug:
-          msg: "{{ item.name }} uses {{ item.type }}"
-        loop: "{{ instances }}"
+  tasks:
+    - name: Print EC2 configuration
+      ansible.builtin.debug:
+      msg: "{{ item.name }} uses {{ item.type }}"
+      loop: "{{ instances }}"
