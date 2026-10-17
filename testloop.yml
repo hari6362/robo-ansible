@@ -6,6 +6,6 @@
     debug:
       msg: hi {{ item }}
     
-    loops:
+    loop:
     - user1
     - user2
