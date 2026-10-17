@@ -17,12 +17,13 @@
   connection: local
   tasks:
   - name: install packages
-    package: nginx
-    state: present
+    package:
+      name: nginx
+      state: present
 
   - name: start package
-    service: nginx
-    state: started
-    enabled: yes
-
+    service: 
+      name: nginx
+      state: started
+      enabled: yes
     
