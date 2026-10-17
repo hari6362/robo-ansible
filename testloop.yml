@@ -31,6 +31,7 @@
 
 - name: install package
   hosts: local
+  connection: local
   become: yes
 
   vars: 
