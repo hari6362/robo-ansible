@@ -1,14 +1,28 @@
-- name: 
+# - name: 
+#   hosts: local
+#   connection: local
+#   vars: 
+#     instances: ["ins1", "ins2", "ins3"]
+#   tasks:
+#   - name: creating display users
+#     debug:
+#       msg: "hi {{ item }}"
+    
+#     loop: "{{ instances }}"
+
+
+
+- name: install multiple apps
   hosts: local
   connection: local
-  vars: 
-    instances: ["ins1", "ins2", "ins3"]
   tasks:
-  - name: creating display users
-    debug:
-      msg: "hi {{ item }}"
+  - name: install packages
+    package: nginx
+    state: present
+
+  - name: start package
+    service: nginx
+    state: started
+    enabled: yes
+
     
-    loop: "{{ instances }}"
-
-
-
