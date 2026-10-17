@@ -1,4 +1,4 @@
-- name: list of distionaries
+- name: list of distionaries  #In real DevOps projects, you often combine lists and dictionaries.
   hosts: local
   connection: local
   vars:
@@ -17,3 +17,15 @@
       debug:
         msg: "{{ item.name }} uses {{ item.type }}"
       loop: "{{ instances }}"
+
+
+
+#       5. How they are used in real DevOps work
+#     Requirement	                      Ansible feature
+# Install multiple packages	              List + loop
+# Create 10 EC2 instances	                List + loop
+# Store EC2 configuration	                Dictionary
+# Configure different EC2 types	          List of dictionaries
+# Run tasks only when needed	            Boolean + conditions
+# Store output from a task	              register variable
+# Hide passwords and secrets	            Ansible Vault + secret variables

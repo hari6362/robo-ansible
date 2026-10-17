@@ -1,0 +1,9 @@
+- name: 
+  hosts: local
+  connection: local
+  tasks:
+  - name: creating display users
+    debug:
+      msg: hi {{ item }}
+    
+    loops: ["user1", "user2", "user3"]
