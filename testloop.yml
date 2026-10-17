@@ -11,18 +11,17 @@
 #     loop: "{{ instances }}"
 
 
-
-- name: install multiple apps
+- name: install package
   hosts: local
   connection: local
   tasks:
-  - name: remove packages
+  - name: install ngx-package
     package:
       name: nginx
-      state: absent
+      state: present
 
-  - name: start package
-    service: 
+  - name:
+    service:
       name: nginx
-      state: stopped
-    
+      state: started
+      enabled: yes
