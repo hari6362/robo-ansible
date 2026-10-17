@@ -8,4 +8,7 @@
     debug:
       msg: "hi {{ item }}"
     
-    loop: instances
+    loop: "{{ instances }}"
+
+
+
