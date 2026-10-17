@@ -11,17 +11,75 @@
 #     loop: "{{ instances }}"
 
 
+# - name: install package
+#   hosts: local
+#   connection: local
+#   tasks:
+#   - name: install ngx-package
+#     package:
+#       name: nginx
+#       state: present
+
+#   - name:
+#     service:
+#       name: nginx
+#       state: started
+#       enabled: yes
+
+
+
+
 - name: install package
   hosts: local
-  connection: local
-  tasks:
-  - name: install ngx-package
-    package:
-      name: nginx
-      state: present
+  become: yes
 
-  - name:
-    service:
-      name: nginx
-      state: started
-      enabled: yes
+  vars: 
+    packages:
+      - { name: nginx, state: present}
+
+  tasks:
+    name: install package
+    package: 
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop: "{{ packages }}"  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+# - name: Install packages
+#   hosts: frontend
+#   become: yes
+
+#   vars:
+#     packages:
+#       - { name: nginx, state: absent }
+#       - { name: sql, state: absent }
+#       - { name: git, state: absent }
+#       - { name: git, state: present }
+
+#   tasks:
+#     - name: Manage packages
+#       package:
+#         name: "{{ item.name }}"
+#         state: "{{ item.state }}"
+#       loop: "{{ packages }}"
