@@ -35,7 +35,7 @@
 
   vars: 
     packages:
-      - { name: nginx, state: absent }
+      - { name: nginx, state: present }
 
   tasks:
   - name: install package
