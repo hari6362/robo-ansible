@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars: 
-  instances: ["ins1", "ins2", "ins3"]
+    instances: ["ins1", "ins2", "ins3"]
   tasks:
   - name: creating display users
     debug:
