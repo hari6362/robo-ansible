@@ -31,12 +31,11 @@
 
 - name: install packages
   hosts: local
-  connection: local
   become: yes
 
   vars: 
     packages:
-      - { name: nginx, state: present }
+      - { name: nginx, state: absent }
 
   tasks:
   - name: install package
