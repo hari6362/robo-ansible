@@ -16,14 +16,13 @@
   hosts: local
   connection: local
   tasks:
-  - name: install packages
+  - name: remove packages
     package:
       name: nginx
-      state: present
+      state: absent
 
   - name: start package
     service: 
       name: nginx
-      state: started
-      enabled: yes
+      state: stoped
     
