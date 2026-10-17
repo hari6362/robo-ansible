@@ -29,44 +29,24 @@
 
 
 
-- name: install package
+- name: install packages
   hosts: local
   connection: local
   become: yes
 
   vars: 
     packages:
-      - { name: nginx, state: present}
+      - { name: nginx, state: present }
 
   tasks:
-    name: install package
+  - name: install package
     package: 
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop: "{{ packages }}"  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
+     
 # - name: Install packages
 #   hosts: frontend
 #   become: yes
