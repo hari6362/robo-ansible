@@ -6,4 +6,6 @@
     debug:
       msg: hi {{ item }}
     
-    loops: ["user1", "user2", "user3"]
+    loops:
+    - user1
+    - user2
